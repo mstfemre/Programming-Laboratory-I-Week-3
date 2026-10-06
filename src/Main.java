@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("38 LAB 003", "Toyota Corolla", 20, 50);
+        Car car = new Car("38 LAB 003", "Porsche 911", 20, 50);
 
         car.checkStatus();
         System.out.println();
