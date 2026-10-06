@@ -1,41 +1,22 @@
-# Programming Laboratory I — Week 3
+# Programming Laboratory I - Week 3
 
-A Java exercise demonstrating a car's mileage, fuel consumption, refueling, and low-fuel status.
+A basic Java program using a Car class.
 
-## Assignment
+The car has a plate number, model, mileage, fuel level and tank capacity.
 
-The `Car` class has `plateNumber`, `model`, `mileage`, `fuelLevel`, and `tankCapacity` attributes. Mileage starts at zero.
+- drive(km) uses 1 liter of fuel for every 10 km. If there is not enough fuel, the car does not move.
+- refuel(amount) adds fuel without exceeding the tank capacity.
+- checkStatus() shows mileage and fuel, with a warning below 10% of tank capacity.
 
-- `drive(km)` consumes exactly **1 liter per 10 km**. A trip with insufficient fuel is rejected without changing mileage or fuel.
-- `refuel(amount)` adds fuel up to tank capacity, discarding any overflow with a message.
-- `checkStatus()` prints mileage and fuel. A low-fuel warning appears **strictly below 10%** of tank capacity.
+Main.java creates one car and demonstrates normal driving and refueling, insufficient fuel, tank overflow and the low-fuel warning.
 
-`Main` creates one car and demonstrates successful driving, insufficient fuel, normal refueling, overfilling, low fuel, and a trip that uses exactly the remaining fuel. Negative and non-finite inputs are rejected.
+The example assumes valid starting values and nonnegative distances and fuel amounts.
 
 ## Run
-
-Requires JDK 8 or newer. No external libraries are needed.
 
 ```sh
 javac -d build src/Car.java src/Main.java
 java -cp build Main
 ```
 
-## Test
-
-```sh
-javac -d build src/Car.java src/Main.java test/CarTest.java
-java -cp build CarTest
-```
-
-The test program checks fuel and mileage changes, both required edge-case messages, the 10% warning boundary, an empty tank, exact-capacity refueling, and invalid inputs. It throws an `AssertionError` if a check fails.
-
-## Files
-
-- `src/Car.java`: car state and operations.
-- `src/Main.java`: assignment demonstration.
-- `test/CarTest.java`: standalone automated checks.
-
-## Türkçe açıklama
-
-Bu haftanın çalışması, araç sınıfı üzerinden nesne yönelimli programlamayı gösterir. Araç her 10 km'de 1 litre yakıt tüketir. Yakıt yetersizse yolculuk yapılmaz; fazla yakıt eklenirse depo kapasitesi aşılmaz. Yakıt depo kapasitesinin %10'unun altındayken uyarı verilir.
+Requires JDK 8 or newer.
